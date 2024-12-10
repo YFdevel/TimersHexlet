@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Timers</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrapper">
+    <form action="#" class="create">
+        <label for="create" class="create__label">Установить время для таймера</label>
+        <input type="number" class="create__input" id="create" name="create">
+        <button type="submit" class="create__btn">Запуск</button>
+    </form>
+    <div class="side">
+        <ul class="timers">
+        </ul>
+    </div>
+</div>
+<template id="timer-template">
+    <li class="timers__item">
+        <p class="timers__num"></p>
+        <button class="timers__btn  timers__btn--pause">PAUSE</button>
+        <button class="timers__btn timers__btn--stop">STOP</button>
+    </li>
+</template>
+<script src="index.js"></script>
+</body>
+</html>
