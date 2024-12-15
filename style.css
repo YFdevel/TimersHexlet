@@ -1,7 +1,8 @@
-*{
+* {
     box-sizing: border-box;
 }
-.wrapper{
+
+.wrapper {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
@@ -12,25 +13,30 @@
     border-left: 1px solid #444444;
     border-right: 1px solid #444444;
 }
-.create{
+
+.create {
     display: flex;
     flex-direction: column;
-    flex-basis: 100%;
+    width: 45%;
+    flex: 1;
     margin-bottom: 36px;
 }
-.create__label{
+
+.create__label {
     font-size: 24px;
     font-weight: 500;
     text-transform: uppercase;
 }
-.create__input{
+
+.create__input {
     font-size: 20px;
     padding: 16px 20px 16px 12px;
     border-radius: 6px;
     border: 1px solid #444444;
     margin-bottom: 12px;
 }
-.create__btn{
+
+.create__btn {
     background: blanchedalmond;
     color: darkslategrey;
     font-size: 20px;
@@ -41,19 +47,37 @@
     box-shadow: inset 0 0 10px 10px peachpuff;
     border-radius: 6px;
 }
-.create__btn:hover{
-   opacity: 0.9;
+
+.create__btn:hover {
+    opacity: 0.9;
 }
-.side{
-    flex-basis: 100%;
+
+.side {
+    width: 42%;
 }
-.timers{
+
+.side__image {
+    background-image: url("./images/timer.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    opacity: 0.6;
+    width: 100%;
+    height: 100%;
+}
+
+.side__image.hidden {
+    display: none;
+}
+
+.timers {
     list-style: none;
     border-radius: 12px;
     padding: 20px;
     margin: 0;
 }
-.timers__item{
+
+.timers__item {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -62,10 +86,12 @@
     gap: 10px;
     background: lightslategray;
 }
-.timers__item:not(:last-child){
+
+.timers__item:not(:last-child) {
     margin-bottom: 15px;
 }
-.timers__num{
+
+.timers__num {
     background: azure;
     font-size: 32px;
     font-weight: 600;
@@ -75,7 +101,8 @@
     width: 100%;
     margin: 0 auto 10px;
 }
-.timers__btn{
+
+.timers__btn {
     width: 45%;
     background: peru;
     color: azure;
@@ -85,7 +112,56 @@
     border-radius: 4px;
     cursor: pointer;
 }
-.timers__btn--stop{
+
+.timers__btn--stop {
     background: darkred;
 }
 
+@media (max-width: 992px) {
+    .create {
+        width: 100%;
+    }
+
+    .side {
+        width: 100%;
+    }
+}
+
+@media (max-width: 765px) {
+    .wrapper {
+        padding: 30px 10px;
+        border: 0;
+    }
+
+    .create__input {
+        font-size: 20px;
+        padding: 20px 10px 20px 10px;
+    }
+
+    .timers {
+        padding: 12px;
+    }
+
+    .timers__item {
+        padding: 26px 12px;
+        gap: 8px;
+    }
+
+    .create__label {
+        font-size: 18px;
+    }
+
+    .side__image {
+        display: none;
+    }
+}
+
+@media (max-width: 450px) {
+    .timers__btn {
+        width: 100%;
+    }
+
+    .create__label {
+        font-size: 16px;
+    }
+}

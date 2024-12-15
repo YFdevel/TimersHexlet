@@ -1,5 +1,6 @@
 const timers = document.querySelector(".timers");
 const form = document.querySelector(".create");
+const image = document.querySelector(".side__image");
 const timerItemTemplate = document.querySelector('#timer-template').content.querySelector('.timers__item');
 
 class Timer {
@@ -19,7 +20,7 @@ class Timer {
         this.current = this.initial;
         return () => {
             this.run();
-            return --this.current;
+            return this.current;
         }
     };
 
@@ -53,8 +54,8 @@ class Timer {
 
     run() {
         this.timerDescriptor = setInterval(() => {
-            this.pElement.textContent = `${--this.current}`;
-            if (this.current <= 0) {
+            this.pElement.textContent = `${this.current--}`;
+            if (this.current < 0) {
                 this.remove();
             }
         }, 1000);
@@ -75,6 +76,7 @@ form.addEventListener("submit", (evt) => {
     const formData = new FormData(evt.target);
     const initial = Number(formData.get("create"));
     const timer = new Timer(initial);
+    image.classList.add("hidden");
     timer.createList();
     const startInterval = timer.init();
     startInterval();
